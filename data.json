@@ -1,16 +1,16 @@
 {
- "updated": "2026-11-03 16:58",
+ "updated": "2026-11-03 22:59",
  "direction": "FLAT",
- "score": -6.7,
+ "score": -5.2,
  "long_th": 30,
  "short_th": -30,
- "price": 3910.6,
- "change_pct": -1.49,
+ "price": 3954.7,
+ "change_pct": -0.38,
  "data_date": "2026-11-03",
  "markets": {
-  "dxy": 101.74,
-  "oil": 98.23,
-  "vix": 21.78,
+  "dxy": 101.79,
+  "oil": 96.0,
+  "vix": 20.84,
   "real": null,
   "bei": null
  },
@@ -28,7 +28,7 @@
   {
    "key": "momentum",
    "name": "金價動能",
-   "value": -0.77,
+   "value": -0.65,
    "weight": 15
   },
   {
@@ -40,19 +40,19 @@
   {
    "key": "dollar",
    "name": "美元指數",
-   "value": 0.04,
+   "value": 0.02,
    "weight": 15
   },
   {
    "key": "oil",
    "name": "原油",
-   "value": 0.98,
+   "value": 0.73,
    "weight": 5
   },
   {
    "key": "inflation",
    "name": "通膨預期",
-   "value": -0.49,
+   "value": -0.4,
    "weight": 5
   },
   {
@@ -64,16 +64,30 @@
   {
    "key": "news",
    "name": "全球新聞",
-   "value": 0.17,
+   "value": 0.26,
    "weight": 10
   }
  ],
  "news": [
   {
-   "score": 1,
-   "title": "Central bank buying and ETF inflows support gold demand in Q3 - World Gold Council",
-   "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNblIwcVI4MUo2VFVvTTZxWmZBT1JrRmIxVHhHQTk4WXQwQmNhU1RUNnJ6QURFZ3BqNkUwTVh2U1JEY1pKN2xEZmdiNkhIM2p1bzJJTDU5REFwUEZHSExqUTduazdBUnhaZ1FmcEwxT0I2UjJtRDRqQ3d2VjFFS3BjVTJfUF9wWVBPd0NkUkhPWWFBRzNqQ0VqWDlrUFJIYjgxQUhzUXhTMjZUbU5KUDQ0?oc=5",
-   "time": "11/03 14:15",
+   "score": 2,
+   "title": "How markets price geopolitical risk: Why de-escalation headlines can trigger major market moves - investingLive",
+   "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPNy1lUExBaUlEVnhJWUI2b0lRdk96eTROaUl0MXJBVGctWWk5NVJhb1NndVhuUkc4N2J4eTgwa1lNcEhELTdYMk0tQ3dJZ05ZZGZURDBqUUYwSVpael9wdjBlQTRKSVlJblBhZDV5WlMydTk4dUFzbFZDUjg4N1o2WWlfdTd5elNaaUsxTDk4bkdOZm55Y2JWTC1JZm10bjMzVGRVVlVxOU1RV0hUcndfaEZjbjZXYXd5MkZBX1hXTEUzU2Nhel9Ham00Zw?oc=5",
+   "time": "11/03 21:42",
+   "topic": "geopolitical tensions"
+  },
+  {
+   "score": 2,
+   "title": "油價因戰爭走高抵銷減產衝擊，沙烏地阿美第三季獲利大增34.5%至362.5億美元 - BigGo 財經",
+   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5BWlEtcmxGYndwaW1XZUpaZEU3c19YU1VlbklGOVpMNFlFSnRGcFdXa2ZTaE5EdEtqWmhjNmVYVGpXXzdtZjRMOFFvb2lETV8xdzVqMUJLLTk5cTBWYmcwbXB3a1I3QjBtOHRudDRZc1lOSlpUc0hYVFBB?oc=5",
+   "time": "11/03 15:56",
+   "topic": "原油 油價"
+  },
+  {
+   "score": -1,
+   "title": "What sparked Gold's off selloff? - FXStreet",
+   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxONWRfYk9QTmVVNnl1bGMzYVBOMkFiR1dtM0pOdjYySTRjb0lkaDlwdkVNR2kyV0dIUEJsZElzTTM0MkdmQ2tCc0NsaDg3SmJyay1rZDhibVpXbEUzMU92bHA0aFhLVEZWSEJGT1ZBZ29iMzc0X2RQeHpEQy1rUkdxdkRTWQ?oc=5",
+   "time": "11/03 21:37",
    "topic": "gold price"
   },
   {
@@ -84,10 +98,17 @@
    "topic": "gold price"
   },
   {
-   "score": -1,
-   "title": "India Gold price today: Gold falls, according to FXStreet data - Mitrade",
-   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcWxvN2xPV0xJS0dBQzZPYWtKVEVyUDJKS3F2VFo3NGNrN0d0dDROa1JZYTZNNkNPNFhwZmxfenVEZWJjRkRrV3lObHdXdndSYU1ySjZiUGhJbkhCTTNZcll2Sjh1YlFfam8yNnRFUHZ1ejYxVDM3cUNCaERqTWw3TF9RTQ?oc=5",
+   "score": 1,
+   "title": "Gold is no longer behaving like a simple safe haven — what are traders missing? - Mitrade",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdm5xYjNVSlVPbHF0a0ZVWFJPN09kMEV0TF96dzl2MVJCNVNrMEVGSV9ZVUl6VkdLcmsxUmpyV0J4dmU2bnJKOTFQTVRyZUZSZnlYZ0d5YmhRX1Izbm9aN0tVelA1WGJpRXlweXRNSVNmOW1leGVwOUFpR1prR1J6UkJ1anNzd2M?oc=5",
    "time": "11/03 14:17",
+   "topic": "gold price"
+  },
+  {
+   "score": -1,
+   "title": "Gold drops as oil prices climb, U.S. midterms loom large - Investing.com",
+   "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZU03WmxCbnZzNXBLNmlNTXc3MUtDWDBsQ1dIOU1yVHRzR1NKWUw5eXFjMEJINm9hRmNCSEc2WF8zeTR3MmZaYkF1YW1kSWpEeGFHV2p0RmFsWE5Pby1aRWZxTmNxYUZGRUF6T2Q2WWhyYXdjSjcyYnlVaEY0dmtxYmtRYm9uRVpaVDlSY3Q4SjlHd2x2U2d1YnBUYTB0c0xsOTl0YTFqemcwTF9VR0k5ZHBzRHA5X3YxZFlleGsyZw?oc=5",
+   "time": "11/03 09:07",
    "topic": "gold price"
   },
   {
@@ -99,37 +120,9 @@
   },
   {
    "score": 1,
-   "title": "Liquidity Crisis Behind Gold’s Plunge Echoes 2008, When a Rebound Followed! - www.tmgm.com",
-   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQV0NHRm9McEkzVHlsSlM1T1RnNWlKaVRNWkZobU52SEcyNWdNWVJwSnlBbTNnMlpEa1lGbld5d1lfYS1pS3MxX0VsdmZXYlNzNktmY2dNaWktbDNNSnRjcWxnRkowX1RJeDlVRUJqdFN6aTlFOW0xWmxUeHdQcnpJX0RUWQ?oc=5",
-   "time": "11/03 12:52",
-   "topic": "gold price"
-  },
-  {
-   "score": -1,
-   "title": "What Sparked Gold's Off Selloff? (NYSEARCA:GLD) - Seeking Alpha",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5hOFdzd2tzRzc5dDhwU19ST1NRQmJULW9mUlExdDJWdjV1WGIxTDR5OE1mMldwbG1Ma3hFZG5LLVNTRlpXbmFQOGxMVW5tMzczWUo2SGlPeDVESDJKMEVEbHF1eVlWZ3psbnNsbHQ5MF8zS0t2a2ZpUHJn?oc=5",
-   "time": "11/03 01:17",
-   "topic": "gold price"
-  },
-  {
-   "score": 1,
    "title": "Gold, no longer a safe haven? - 富途牛牛",
    "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ZWmxLY1B3bzluanJyMF8zUGJFeE5sc1B6dDdnOTBIR05UUnlWSWdFRXd4RzQ1OUJ4b1F0dFdyMm1KdDNHeE9abjZwRDgwSlFUSXdaN1JXX1B3RHdaX2JVY1hhRmhEOHg2Ty0yRGlDdTB0eEdDREVIRFBn?oc=5",
    "time": "11/03 09:29",
-   "topic": "gold price"
-  },
-  {
-   "score": 1,
-   "title": "Central banks buy gold at fastest pace since 2024, WGC says - The Business Times",
-   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPT3FYY0FpQkVnR3hGZ2JRU3Z0ZV9IclgzT2pORTZOUkt1SEtBaTZ6TWZEcHBTVkVkMlo2X0NGSnRJNWZvN3Z0Y1lJU0o1em0wM2c1dlM5Z09HTnRPQUh4b2Q0Y05wdW5GcW1NRGcyYVNGdl92bnRtOF9lN05jS1ZFT05Ba20xX25tVmtqb1pQNElyRjRXMGhkMy1oTmh4elNySTZDN3p6dkFBU1QzRkltVkw3WE41d2YyckV3?oc=5",
-   "time": "11/03 15:26",
-   "topic": "gold price"
-  },
-  {
-   "score": -1,
-   "title": "Gold’s Selloff Puts Low-Cost Producers in Focus Amid Oil-Driven Fed Hike Bets - Crux Investor",
-   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNa1VoLVkwam9kZ0xmUUc3R2RrSFVhMW03cEJwVUlpNEJvWlhrYlVDRXVGYS1YcFR1bjR4TkZENmtRNXVNZUZSMGJhbDdzR3lRVE5KdDhxdjMybFMwYnJEZ1Rkdkx2M19nQ0I5ekgxSVFzakxESHNfdUprc3Eyc2d2ZWJxWm42N0NzM2tSSm84RFd4MzFmVEozc0xqcUUyV180WmxLWW1aOFNyb0FFeEt3UA?oc=5",
-   "time": "11/02 22:42",
    "topic": "gold price"
   },
   {
@@ -141,20 +134,27 @@
   },
   {
    "score": 1,
-   "title": "Why Does the Liquidity Crisis Behind Gold’s Plunge Echo 2008, When Gold Subsequently Rebounded? - www.tmgm.com",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNamI4UEIySDdsOVJOd2gxSk00ZW1LNmdaYm9BTHpaWXFINkJfSV9mWTg4d2FRVjhFbThZRlpLLUZ2SVpta2xZc3p6MW9tWmJhUDhuZjd0Vzh0cHkzZ0owSUswZUNCUVk0Q3p0ZC1TXy1Ldld4Z3dONjlQdHlkTmVvY2xVczVud1E?oc=5",
-   "time": "11/03 13:22",
-   "topic": "gold price"
+   "title": "Would prices have fallen without tariffs this past year? New York Fed research says yes for many consumer goods - Chase Bank",
+   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNaUxma1d4QThmSzZ0MkRoQ2RJd3Z0blNnRGt3MjJLZTZfNXFNLXpFOXNNMUIxOTlPV3lmeGJzV1Z4WEhXMnBGUlFwT2l0ak52allDRHpDMUtvMlhFdU1BVTJlQnkzdzNqLW1sdEw0aFNvMU9wd2VjR2ltVkJ4Mm5aR0J2WTdtT0Jqb1FNYWU4RUZHamRMZXc5ako2TXZYNFlwWDN0LTVrcDlvUGVzc0tlZDIyX1RQWnQ5Uk1sYzdSajFkcUtMUGlQUDI3ejRvNUJFWS1Rdw?oc=5",
+   "time": "11/03 10:50",
+   "topic": "Federal Reserve"
   },
   {
    "score": -1,
-   "title": "Gold Falls Below $3,900, Wall Street Turns Bearish en Masse as Retail Investors Buy the Dip - BigGo Finance",
-   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5jdHprTW8ySTFfZjEwVXNxMFVTdkZicXNncnhXYmF5d2ZjeXdnc1N0MVJqWWR1TnhncnFrVUw2bGczQjR4a0twV2NPbm5RcE8zbm95ekR6UGtvYlVNdzhXUDhvNzhxS24ydU04X3BlUkZTNXJYQUE?oc=5",
-   "time": "11/03 08:57",
-   "topic": "gold price"
+   "title": "Dallas Fed president explains why she is pushing for interest rate hikes - Dallas News",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPa0ZPY1JzUW50ZlowWUt1Yzh5cHBfWS1PaF9aeW5FTzhMbVJ3bi1BMUlTUGR6WGpJN1N4QlBnNFhkQzdQT3lPcndMcUZzc09pakpzQ2oyUjV3SUJSZXpVWC1NUjVYQWk4WFUtb3JXOFZ0SnVIRFV6ZWl4TmdlRmduT3pOUVpjdlVMZDlKa1F1U3lWUXFETGppVW9xRDMyVUY1N1d3c0FGNmpldjlx?oc=5",
+   "time": "11/03 04:28",
+   "topic": "Federal Reserve"
+  },
+  {
+   "score": 1,
+   "title": "Trump says Fed rate cuts could help the US balance its budget as debt pressures mount - Business Upturn",
+   "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQaC1fLTNUM2tMZzFaaFdZM3ZuWWw0UUE3bVE4S2pvODNuMTBmWnRXZ1haeDlZajZiZjN6SEZnRmxRd2RxVHB6MTFoM01TZ25XNjZSWHRBajJLWUpDdklPNkdLRkxDbVhjb0R0LUptSlg1WG5mR1VRUm1CM2hkOUpMZEFad1ltOEJqYWh0WTZ1U0g1ZTJWQklLSjFoeFBVaWJmTUVOWndkc2tWTE9EdjNiQUxTTmV2cVFhYkVvVm1heDJFNWhY?oc=5",
+   "time": "11/03 22:12",
+   "topic": "Federal Reserve"
   }
  ],
- "news_count": 356,
+ "news_count": 390,
  "events": [
   {
    "id": "Congressional Elections|2026-11-03T10:16:00-05:00",
@@ -527,7 +527,7 @@
    4031.4,
    3898.9,
    3969.6,
-   3910.6
+   3954.7
   ],
   "score": [
    64.9,
@@ -709,7 +709,7 @@
    -5.9,
    -9.1,
    -3.9,
-   -9.3
+   -8.7
   ]
  },
  "signal_log": [
@@ -726,9 +726,9 @@
   "mom": -16.05,
   "since": "2026-06-30",
   "entry": 4038.5,
-  "price": 3910.6,
-  "pnl": 3.17,
-  "mom_now": -14.4,
+  "price": 3954.7,
+  "pnl": 2.08,
+  "mom_now": -13.44,
   "preview": "SHORT",
   "flip_price": 4694.3,
   "month_end": "11/30",
@@ -796,5 +796,117 @@
   ],
   "stats": "回測 2006–2026：年化 5.8%｜四個時期都賺（含 2013–18 空頭）｜勝率 33%、賺賠比約 6:1｜最大回撤 -50%（1 倍）"
  },
- "active_events": []
+ "active_events": [
+  {
+   "id": "oil_1h_drop|2026-11-03 13",
+   "freq": "小時線",
+   "trigger": "金價 +0.7%、原油 -2.8%、美元 -0.1%",
+   "date": "11/03 22:00",
+   "key": "oil_1h_drop",
+   "name": "原油 1 小時急跌 ≥2%",
+   "logic": "",
+   "horizons": [
+    "1小時",
+    "4小時"
+   ],
+   "n": 67,
+   "up": [
+    53.7,
+    50.7
+   ],
+   "mean": [
+    0.08,
+    0.09
+   ],
+   "base_up": [
+    51.3,
+    52.3
+   ],
+   "base_mean": [
+    0.004,
+    0.017
+   ],
+   "rec": "無明顯方向",
+   "stable": false,
+   "main": 1,
+   "halves": [
+    39,
+    62
+   ],
+   "recent": [
+    {
+     "time": "10/20 23:00",
+     "trigger": {
+      "gold": 0.39,
+      "oil": -2.42,
+      "dxy": -0.03
+     },
+     "fwd": [
+      -0.3,
+      -0.49
+     ]
+    },
+    {
+     "time": "10/15 18:00",
+     "trigger": {
+      "gold": 0.14,
+      "oil": -2.13,
+      "dxy": -0.02
+     },
+     "fwd": [
+      -0.05,
+      -0.06
+     ]
+    },
+    {
+     "time": "09/29 01:00",
+     "trigger": {
+      "gold": 0.14,
+      "oil": -2.02,
+      "dxy": -0.05
+     },
+     "fwd": [
+      0.12,
+      -0.34
+     ]
+    },
+    {
+     "time": "09/25 01:00",
+     "trigger": {
+      "gold": 0.41,
+      "oil": -2.15,
+      "dxy": -0.08
+     },
+     "fwd": [
+      -0.19,
+      0.03
+     ]
+    },
+    {
+     "time": "09/22 17:00",
+     "trigger": {
+      "gold": 0.69,
+      "oil": -3.02,
+      "dxy": -0.12
+     },
+     "fwd": [
+      0.16,
+      0.1
+     ]
+    },
+    {
+     "time": "09/18 16:00",
+     "trigger": {
+      "gold": -0.0,
+      "oil": -4.69,
+      "dxy": 0.05
+     },
+     "fwd": [
+      -0.03,
+      -0.28
+     ]
+    }
+   ]
+  }
+ ]
 }
