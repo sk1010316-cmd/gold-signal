@@ -150,6 +150,44 @@ def direction(score):
     return "LONG" if score >= LONG_TH else "SHORT" if score <= SHORT_TH else "FLAT"
 
 
+# ====== 波段：6 個月動能（主訊號）======
+SWING_LOOKBACK = 126      # 約 6 個月交易日
+SWING_STATS = "回測 2006–2026：年化 5.8%｜四個時期都賺（含 2013–18 空頭）｜勝率 33%、賺賠比約 6:1｜最大回撤 -50%（1 倍）"
+
+
+def swing_signal(gold, now=None):
+    """每月最後一個交易日收盤：金價 vs 126 個交易日前。漲 → 下個月做多；跌 → 做空。"""
+    now = now or dt.datetime.now(TW)
+    g = gold.dropna()
+    g.index = pd.to_datetime(g.index).tz_localize(None) if getattr(g.index, "tz", None) else pd.to_datetime(g.index)
+    mom = g / g.shift(SWING_LOOKBACK) - 1
+    per = pd.Series(g.index.to_period("M"), index=g.index)
+    is_me = per != per.shift(-1)
+    if per.iloc[-1] >= pd.Period(now.strftime("%Y-%m"), "M"):
+        is_me.iloc[-1] = False                       # 本月還沒結束
+    me = mom[is_me].dropna()
+    dirs = np.sign(me)
+    cur = int(dirs.iloc[-1])
+    start = dirs.index[-1]
+    for t, v in zip(dirs.index[::-1], dirs.values[::-1]):
+        if v != cur:
+            break
+        start = t
+    i_ref = len(g) - SWING_LOOKBACK
+    return {"dir": "LONG" if cur > 0 else "SHORT",
+            "decided": me.index[-1].strftime("%Y-%m-%d"), "mom": round(float(me.iloc[-1]) * 100, 2),
+            "since": start.strftime("%Y-%m-%d"), "entry": round(float(g.loc[start]), 1),
+            "price": round(float(g.iloc[-1]), 1),
+            "pnl": round(float(cur * (g.iloc[-1] / g.loc[start] - 1)) * 100, 2),
+            "mom_now": round(float(mom.iloc[-1]) * 100, 2),
+            "preview": "LONG" if mom.iloc[-1] > 0 else "SHORT",
+            "flip_price": round(float(g.iloc[i_ref]), 1) if i_ref >= 0 else None,
+            "month_end": (pd.Timestamp(now.strftime("%Y-%m-01")) + pd.offsets.MonthEnd(0)).strftime("%m/%d"),
+            "history": [{"month": t.strftime("%Y-%m"), "dir": "LONG" if v > 0 else "SHORT", "mom": round(float(m) * 100, 1)}
+                        for t, v, m in zip(dirs.index[-12:], dirs.values[-12:], me.values[-12:])][::-1],
+            "stats": SWING_STATS}
+
+
 # ====== 新聞 ======
 BULL = ["rate cut", "dovish", "safe haven", "safe-haven", "war ", "escalat", "attack", "missile", "airstrike",
         "sanction", "central bank buying", "central banks buy", "record high", "all-time high", "weak jobs",
@@ -279,6 +317,12 @@ def live(report=False, dry=False):
                   "score": [round(float(x), 1) for x in hist_score]},
         "signal_log": state.get("history", [])[-20:],
     }
+
+    try:
+        data["swing"] = swing_signal(df["gold"], now)
+    except Exception as e:
+        print("[警告] 波段訊號失敗：", e)
+        data["swing"] = None
 
     # 事件反應：統計每天重算一次，即時偵測每小時
     try:
