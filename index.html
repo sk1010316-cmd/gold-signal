@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>XAUUSDT 黃金多空訊號</title>
+<title>XAUUSDT 黃金波段訊號</title>
 <style>
   :root{--bg:#0f1115;--card:#171a21;--line:#262a33;--text:#e8e6e1;--mute:#8b8f98;--gold:#d4a937;
         --long:#2fb171;--short:#e0524f;--flat:#9aa0a8;--warn:#f0c060}
@@ -66,9 +66,19 @@
 </head>
 <body>
 <div class="wrap">
-  <header><h1>🥇 幣安 XAUUSDT 多空訊號</h1><span class="mute" id="upd">載入中…</span></header>
+  <header><h1>🥇 XAUUSDT 黃金波段訊號</h1><span class="mute" id="upd">載入中…</span></header>
+
+  <!-- 波段主訊號 -->
+  <div class="card hero" id="swCard" style="border-color:#3a3320">
+    <div class="mute">主訊號・黃金波段（6 個月動能，每月底檢查）</div>
+    <div class="dir" id="swDir">—</div>
+    <div id="swInfo" class="mute" style="line-height:1.8"></div>
+    <div class="block" id="swWarn"></div>
+    <details style="margin-top:10px;text-align:left"><summary>近 12 個月月底訊號</summary><table id="swHist" style="margin-top:6px"></table></details>
+  </div>
 
   <!-- 即時訊號 -->
+  <div class="mute" style="margin:2px 4px 6px">短線參考（15 分 K）— 回測扣手續費後沒有優勢，僅供觀察，不建議依此進場</div>
   <div class="card hero">
     <div class="px" id="px">—</div>
     <div class="dir" id="dir">—</div>
@@ -282,6 +292,7 @@ function renderMacro(){
   $("events").innerHTML=d.events.length?d.events.map(e=>`<li><span style="color:var(--warn)">${e.time}</span>　${esc(e.title)}${e.forecast?` <span class="mute">預期 ${esc(e.forecast)}／前值 ${esc(e.previous)}</span>`:""}</li>`).join(""):`<li class="mute">近期沒有高影響數據</li>`;
   $("newsH").textContent=`重點新聞（24 小時共 ${d.news_count} 則）`;
   $("news").innerHTML=d.news.length?d.news.map(n=>`<li><b class="${n.score>0?'LONG':'SHORT'}">${n.score>0?"▲":"▼"}</b> <a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a><div class="mute">${n.time}・${esc(n.topic)}</div></li>`).join(""):`<li class="mute">沒有明顯偏多或偏空的新聞</li>`;
+  try{renderSwing();}catch(e){console.error(e);}
   try{renderEvents();}catch(e){console.error(e);}
   const b=btData;if(!b){$("btInfo").textContent="回測資料讀取失敗或尚未產生（到 GitHub Actions 用 backtest 模式執行一次）";return;}
   const keys=["多空策略","只做多","買進持有"];
@@ -292,6 +303,16 @@ function renderMacro(){
   $("btFac").innerHTML="<tr><th>因子</th><th>命中率</th><th>IC</th></tr>"+b.factors.map(f=>`<tr><td>${f.name}</td><td>${f.hit??"—"}%</td><td>${f.ic}</td></tr>`).join("");
 }
 
+function renderSwing(){
+  const w=macroData&&macroData.swing; if(!w){$("swInfo").textContent="波段資料尚未產生";return;}
+  $("swDir").textContent=LBL[w.dir]; $("swDir").className="dir "+w.dir;
+  $("swInfo").innerHTML=`自 ${w.since} 起｜COMEX 進場 ${fmt(w.entry,0)} → 現在 ${fmt(w.price,0)}（<span class="${w.pnl>=0?'LONG':'SHORT'}">${w.pnl>0?"+":""}${w.pnl}%</span>）<br>
+    6 個月動能：上月底 ${w.mom>0?"+":""}${w.mom}%｜現在 ${w.mom_now>0?"+":""}${w.mom_now}%｜翻向價約 ${fmt(w.flip_price,0)}（${w.month_end} 收盤決定）<br>
+    建議槓桿 1～1.5 倍・不設固定止損<br><span style="font-size:11.5px">${esc(w.stats)}</span>`;
+  const warn=w.preview!==w.dir; $("swWarn").style.display=warn?"block":"none";
+  $("swWarn").textContent=warn?`⚠️ 目前價格已在翻向價另一側：若 ${w.month_end} 收盤維持，下個月改${LBL[w.preview]}`:"";
+  $("swHist").innerHTML="<tr><th>月份</th><th>方向</th><th>6個月動能</th></tr>"+w.history.map(h=>`<tr><td>${h.month}</td><td class="${h.dir}">${LBL[h.dir]}</td><td>${h.mom>0?"+":""}${h.mom}%</td></tr>`).join("");
+}
 const REC_CLS={"偏多":"LONG","偏空":"SHORT"};
 function evLine(e){const i=e.main;return `歷史 ${e.n} 次，${e.horizons[i]}後上漲 <b>${e.up[i]??"—"}%</b>（平常 ${e.base_up[i]}%），平均 ${e.mean[i]!=null?(e.mean[i]>0?"+":"")+e.mean[i]+"%":"—"}`;}
 function renderEvents(){
