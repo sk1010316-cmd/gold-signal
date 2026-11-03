@@ -1,0 +1,44 @@
+name: gold-signal
+
+on:
+  schedule:
+    - cron: "5 * * * *"      # 每小時第 5 分執行（GitHub 可能延遲幾分鐘）
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "執行模式"
+        type: choice
+        options: [normal, report, backtest]
+        default: report
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gold-signal
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install yfinance pandas numpy requests
+      - name: Run signal
+        env:
+          # Telegram 由你電腦上的 gold_bot.py 推播，這裡只更新網頁資料
+          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: |
+          MODE="${{ github.event.inputs.mode }}"
+          if [ "$MODE" = "report" ]; then python gold_signal.py --report
+          elif [ "$MODE" = "backtest" ]; then python gold_signal.py --backtest
+          else python gold_signal.py; fi
+      - name: Commit data
+        run: |
+          git config user.name "gold-bot"
+          git config user.email "gold-bot@users.noreply.github.com"
+          for f in data.json backtest.json events.json gold_state.json; do [ -f "$f" ] && git add "$f"; done || true
+          git diff --cached --quiet || (git commit -m "update gold signal" && git pull --rebase && git push)
