@@ -107,6 +107,21 @@ def build_frame(period="3y"):
         except Exception as e:
             print(f"[警告] {col} 抓取失敗：{e}")
             df[col] = np.nan
+    # FRED 抓不到時的備援：用抗通膨債 ETF 推算（TIP 存續期約 7 年 → 價格 1.75% ≈ 實質利率 25bp）
+    df.attrs["proxy"] = []
+    if df["real"].notna().sum() < len(df) * 0.5 or df["bei"].notna().sum() < len(df) * 0.5:
+        try:
+            tip = fetch_yf("TIP", period).reindex(df.index, method="ffill")
+            ief = fetch_yf("IEF", period).reindex(df.index, method="ffill")
+            if df["real"].notna().sum() < len(df) * 0.5:
+                df["real"] = -np.log(tip) / 7 * 100
+                df.attrs["proxy"].append("real")
+            if df["bei"].notna().sum() < len(df) * 0.5:
+                df["bei"] = np.log(tip / ief) / 7 * 100
+                df.attrs["proxy"].append("bei")
+            print("[提示] 實質利率/通膨預期改用 TIP、IEF 推算：", df.attrs["proxy"])
+        except Exception as e:
+            print("[警告] TIP/IEF 備援也失敗：", e)
     return df
 
 
@@ -252,8 +267,9 @@ def live(report=False, dry=False):
         "price": round(float(df["gold"].iloc[-1]), 1),
         "change_pct": round(float(df["gold"].pct_change().iloc[-1] * 100), 2),
         "data_date": df.index[-1].strftime("%Y-%m-%d"),
-        "markets": {k: (None if pd.isna(df[k].iloc[-1]) else round(float(df[k].iloc[-1]), 2))
+        "markets": {k: (None if pd.isna(df[k].iloc[-1]) or k in df.attrs.get("proxy", []) else round(float(df[k].iloc[-1]), 2))
                     for k in ["dxy", "oil", "vix", "real", "bei"]},
+        "proxy": df.attrs.get("proxy", []),
         "factors": [{"key": k, "name": NAMES[k], "value": round(float(last[k]), 2), "weight": WEIGHTS[k]}
                     for k in WEIGHTS],
         "news": headlines, "news_count": ncount,
