@@ -58,9 +58,22 @@ def load_json(path, default):
         return default
 
 
+def _clean(o):
+    """NaN / inf 轉成 null，否則網頁讀不了 JSON"""
+    if isinstance(o, dict):
+        return {k: _clean(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_clean(v) for v in o]
+    if isinstance(o, (float, np.floating)):
+        return None if not np.isfinite(o) else float(o)
+    if isinstance(o, np.integer):
+        return int(o)
+    return o
+
+
 def save_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=1, default=str)
+        json.dump(_clean(data), f, ensure_ascii=False, indent=1, default=str, allow_nan=False)
 
 
 # ====== 資料 ======
