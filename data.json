@@ -1,15 +1,15 @@
 {
- "updated": "2026-11-03 14:48",
+ "updated": "2026-11-03 15:34",
  "direction": "FLAT",
- "score": -23.4,
+ "score": -22.9,
  "long_th": 30,
  "short_th": -30,
- "price": 3935.4,
- "change_pct": -0.86,
+ "price": 3920.7,
+ "change_pct": -1.23,
  "data_date": "2026-11-03",
  "markets": {
-  "dxy": 101.72,
-  "oil": 97.45,
+  "dxy": 101.66,
+  "oil": 98.16,
   "vix": 21.15,
   "real": null,
   "bei": null
@@ -24,7 +24,7 @@
   {
    "key": "momentum",
    "name": "金價動能",
-   "value": -0.7,
+   "value": -0.74,
    "weight": 15
   },
   {
@@ -36,13 +36,13 @@
   {
    "key": "dollar",
    "name": "美元指數",
-   "value": 0.05,
+   "value": 0.08,
    "weight": 15
   },
   {
    "key": "oil",
    "name": "原油",
-   "value": 0.9,
+   "value": 0.97,
    "weight": 5
   },
   {
@@ -60,7 +60,7 @@
   {
    "key": "news",
    "name": "全球新聞",
-   "value": 0.19,
+   "value": 0.21,
    "weight": 10
   }
  ],
@@ -108,10 +108,17 @@
    "topic": "gold price"
   },
   {
+   "score": 1,
+   "title": "Central banks buy gold at fastest pace since 2024, WGC says - The Business Times",
+   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPT3FYY0FpQkVnR3hGZ2JRU3Z0ZV9IclgzT2pORTZOUkt1SEtBaTZ6TWZEcHBTVkVkMlo2X0NGSnRJNWZvN3Z0Y1lJU0o1em0wM2c1dlM5Z09HTnRPQUh4b2Q0Y05wdW5GcW1NRGcyYVNGdl92bnRtOF9lN05jS1ZFT05Ba20xX25tVmtqb1pQNElyRjRXMGhkMy1oTmh4elNySTZDN3p6dkFBU1QzRkltVkw3WE41d2YyckV3?oc=5",
+   "time": "11/03 15:26",
+   "topic": "gold price"
+  },
+  {
    "score": -1,
-   "title": "What Sparked Gold's Off Selloff? - LinkedIn",
-   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZzZNU19lWWVBZjgyM0ZjWnhnRWY4NG5UMEI1eGd3UXlVTG5jbndWY0ZxbVA4R292ay1OeVBlOGY4M2tGcUNQZ1Fjb2hmRC1HUkJ3UW05ZXlrcjFjVk5tUFE2ZWpwUUtGLUJrQ0pEZURYWnpGODlxSWpLYU14dzNzYXgyazBtMW8?oc=5",
-   "time": "11/03 03:45",
+   "title": "Gold Falls Below $3,900, Wall Street Turns Bearish en Masse as Retail Investors Buy the Dip - BigGo Finance",
+   "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5jdHprTW8ySTFfZjEwVXNxMFVTdkZicXNncnhXYmF5d2ZjeXdnc1N0MVJqWWR1TnhncnFrVUw2bGczQjR4a0twV2NPbm5RcE8zbm95ekR6UGtvYlVNdzhXUDhvNzhxS24ydU04X3BlUkZTNXJYQUE?oc=5",
+   "time": "11/03 08:57",
    "topic": "gold price"
   },
   {
@@ -129,28 +136,21 @@
    "topic": "gold price"
   },
   {
-   "score": -1,
-   "title": "Gold price falls below $4,000 amid unusual speculative sell-off - KuCoin",
-   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPblFlWTFQY0RqSUNTZjlna2g4V3Q0LTlBZUdSMWp2d1hVZGRwaGlJQ25VZXVmeDkwNUp0NURha1FHTHo1WlBYUWY0ZFFNTV9neno5N21PRUJ4VXhkSHRUSFNQZlUwTmtqMi1HTkVwUEkzdl9BckYwUUsyRjNsMXk0eHRCQUFUV0pmbWp1Q1ZWbDI1NUpjYjlod05KQQ?oc=5",
-   "time": "11/02 18:43",
-   "topic": "gold price"
-  },
-  {
-   "score": -1,
-   "title": "Gold and silver prices recover, market still worried about Fed interest rate hikes - Laodong.vn",
-   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdGVYT2dCck1fSHZ1bWV4bEY3TENhX0RXcHhMSm96VEpDTkw1Z1M4YmxRTG9MX19iVmo1ekx1cU5HXzZLajhDTFpvckZpSTc2SDdIU09JLXhGaVBuYUJlT1pRd25heHdyVjdqUDVQMU1ELW1kSW95QkJkR0ZMMW9pUzJRblNlTVhSWmNFY1VhZTBOMFRsdnVSdWJ1eUNnMzJjV0ZncnVVQzFYR2taRllNRGFCWQ?oc=5",
-   "time": "11/03 11:06",
-   "topic": "gold price"
-  },
-  {
    "score": 1,
    "title": "Would prices have fallen without tariffs this past year? New York Fed research says yes for many consumer goods - Chase Bank",
    "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNaUxma1d4QThmSzZ0MkRoQ2RJd3Z0blNnRGt3MjJLZTZfNXFNLXpFOXNNMUIxOTlPV3lmeGJzV1Z4WEhXMnBGUlFwT2l0ak52allDRHpDMUtvMlhFdU1BVTJlQnkzdzNqLW1sdEw0aFNvMU9wd2VjR2ltVkJ4Mm5aR0J2WTdtT0Jqb1FNYWU4RUZHamRMZXc5ako2TXZYNFlwWDN0LTVrcDlvUGVzc0tlZDIyX1RQWnQ5Uk1sYzdSajFkcUtMUGlQUDI3ejRvNUJFWS1Rdw?oc=5",
    "time": "11/03 10:50",
    "topic": "Federal Reserve"
+  },
+  {
+   "score": -1,
+   "title": "Dallas Fed president explains why she is pushing for interest rate hikes - Dallas News",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPa0ZPY1JzUW50ZlowWUt1Yzh5cHBfWS1PaF9aeW5FTzhMbVJ3bi1BMUlTUGR6WGpJN1N4QlBnNFhkQzdQT3lPcndMcUZzc09pakpzQ2oyUjV3SUJSZXpVWC1NUjVYQWk4WFUtb3JXOFZ0SnVIRFV6ZWl4TmdlRmduT3pOUVpjdlVMZDlKa1F1U3lWUXFETGppVW9xRDMyVUY1N1d3c0FGNmpldjlx?oc=5",
+   "time": "11/03 04:28",
+   "topic": "Federal Reserve"
   }
  ],
- "news_count": 390,
+ "news_count": 416,
  "events": [
   {
    "id": "Congressional Elections|2026-11-03T10:16:00-05:00",
@@ -523,7 +523,7 @@
    4031.4,
    3898.9,
    3969.6,
-   3935.4
+   3920.7
   ],
   "score": [
    49.0,
@@ -705,7 +705,7 @@
    -27.4,
    -28.4,
    -23.2,
-   -28.1
+   -27.8
   ]
  },
  "signal_log": [
