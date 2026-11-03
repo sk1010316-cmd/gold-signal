@@ -177,8 +177,8 @@ function parseEvTime(s,now){const [md,hm]=s.split(" ");const [m,d]=md.split("/")
 let macroData=null, btData=null, evData=null;
 async function loadMacro(){
   try{macroData=await get("data.json?t="+Date.now());}catch(e){macroData=null;}
-  try{btData=await get("backtest.json?t="+Date.now());}catch(e){btData=null;}
-  try{evData=await get("events.json?t="+Date.now());}catch(e){evData=null;}
+  try{btData=await get("backtest.json?t="+Date.now());}catch(e){btData=null;console.error("backtest.json",e);}
+  try{evData=await get("events.json?t="+Date.now());}catch(e){evData=null;console.error("events.json",e);}
   renderMacro();
 }
 
@@ -282,8 +282,8 @@ function renderMacro(){
   $("events").innerHTML=d.events.length?d.events.map(e=>`<li><span style="color:var(--warn)">${e.time}</span>　${esc(e.title)}${e.forecast?` <span class="mute">預期 ${esc(e.forecast)}／前值 ${esc(e.previous)}</span>`:""}</li>`).join(""):`<li class="mute">近期沒有高影響數據</li>`;
   $("newsH").textContent=`重點新聞（24 小時共 ${d.news_count} 則）`;
   $("news").innerHTML=d.news.length?d.news.map(n=>`<li><b class="${n.score>0?'LONG':'SHORT'}">${n.score>0?"▲":"▼"}</b> <a href="${esc(n.link)}" target="_blank" rel="noopener">${esc(n.title)}</a><div class="mute">${n.time}・${esc(n.topic)}</div></li>`).join(""):`<li class="mute">沒有明顯偏多或偏空的新聞</li>`;
-  renderEvents();
-  const b=btData;if(!b)return;
+  try{renderEvents();}catch(e){console.error(e);}
+  const b=btData;if(!b){$("btInfo").textContent="回測資料讀取失敗或尚未產生（到 GitHub Actions 用 backtest 模式執行一次）";return;}
   const keys=["多空策略","只做多","買進持有"];
   $("btInfo").textContent=`${b.range}｜持倉 多 ${b.exposure.long}% / 空 ${b.exposure.short}% / 觀望 ${b.exposure.flat}%｜持倉日勝率 ${b.winrate}%`;
   const row=s=>s?`<td>${s.cagr}%</td><td>${s.sharpe}</td><td>${s.mdd}%</td>`:`<td colspan="3">—</td>`;
